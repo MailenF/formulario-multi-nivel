@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="fill" class="container-skill-one">
+    <mat-label>Categoria</mat-label>
+    <mat-select formControlName="subSkillOne">
+      <mat-option
+        *ngFor="let categoria of categorias"
+        [value]="categoria.value"
+      >
+        {{ categoria.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="container-skill-two">
+    <mat-label>Skills</mat-label>
+    <mat-select formControlName="subSkillTwo">
+      <ng-container *ngIf="filteredCategory$ as filteredCategory">
+        <div *ngFor="let value of filteredCategory | async">
+          <mat-option [value]="value.habilidad">{{
+            value.habilidad
+          }}</mat-option>
+        </div>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-stroked-button
+    color="warn"
+    (click)="deleteSkill.emit(null)"
+    class="button-delete"
+  >
+    ELIMINAR
+  </button>
+</form>

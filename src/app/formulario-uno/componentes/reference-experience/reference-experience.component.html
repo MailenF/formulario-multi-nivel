@@ -1,0 +1,14 @@
+<div [formGroup]="form" class="container-observation">
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Reference</mat-label>
+    <input matInput type="text" formControlName="reference" />
+  </mat-form-field>
+  <button
+    mat-mini-fab
+    color="warn"
+    class="button-delete"
+    (click)="deleteReference.emit(null)"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

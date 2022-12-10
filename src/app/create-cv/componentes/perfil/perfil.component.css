@@ -1,0 +1,65 @@
+.profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.76);
+}
+.profile .img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile .img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile h2 {
+  color: white;
+  font-size: 1.8em;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.profile h2 span {
+  font-size: 0.65em;
+}
+.contacto {
+  padding-top: 20px;
+}
+.title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.contacto ul {
+  position: absolute;
+  font-weight: 500;
+}
+.contacto li {
+  position: relative;
+  list-style: none;
+  margin: 5px 0;
+  font-weight: 500;
+}
+.icon {
+  color: white;
+  margin-right: 5px;
+}
+.text {
+  font-size: 15px;
+}
+.title-educacion {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 14px;
+}

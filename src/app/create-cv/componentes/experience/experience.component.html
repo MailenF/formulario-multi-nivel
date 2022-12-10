@@ -1,0 +1,21 @@
+<div class="box">
+  <div class="year">
+    <li>
+      <span class="left">{{ year }}</span>
+    </li>
+    <li>
+      <span class="left">{{ company }}</span>
+    </li>
+  </div>
+  <div class="text">
+    <li>
+      <span class="position">{{ job }}</span>
+    </li>
+    <li>
+      <span>{{ description }} </span>
+    </li>
+  </div>
+</div>
+<ng-container *ngFor="let ctrl of asArrayOfFormGroup(formArray); let i = index">
+  <app-referencia-experience></app-referencia-experience
+></ng-container>

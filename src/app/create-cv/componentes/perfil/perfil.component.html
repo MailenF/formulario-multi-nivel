@@ -1,0 +1,36 @@
+<body>
+  <div class="profile">
+    <div class="img">
+      <img src="assets/img0001.jpg" />
+    </div>
+    <div class="name">
+      <h2>
+        {{ name }} {{ lastName }} <br />
+        <span>{{ profession }}</span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="contacto">
+    <h3 class="title">Contact Info</h3>
+    <li>
+      <mat-icon class="icon"> place</mat-icon>
+      <span class="text"> {{ direction }}</span>
+    </li>
+    <li>
+      <mat-icon class="icon"> call</mat-icon>
+      <span class="text"> {{ phoneNumber }}</span>
+    </li>
+    <li>
+      <mat-icon class="icon"> email</mat-icon>
+      <span class="text">{{ email }} </span>
+    </li>
+  </div>
+
+  <h3 class="title-educacion">Educacion</h3>
+  <ng-container
+    *ngFor="let ctrl of asArrayOfFormGroup(formArrayEducation); let i = index"
+  >
+    <app-educacion [form]="ctrl"></app-educacion>
+  </ng-container>
+</body>

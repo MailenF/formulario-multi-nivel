@@ -1,0 +1,10 @@
+.container {
+  margin-bottom: 16px;
+}
+.educacion li {
+  list-style: none;
+  font-weight: 500;
+}
+.educacion li .titulo {
+  text-transform: uppercase;
+}

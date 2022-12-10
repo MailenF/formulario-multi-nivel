@@ -1,0 +1,17 @@
+<body>
+  <div>
+    <h3 class="title">ABOUT ME</h3>
+    <div>{{ profile }}</div>
+  </div>
+  <h3 class="title-two">EXPERIENCE</h3>
+  <ng-container
+    *ngFor="let ctrl of asArrayOfFormGroup(formArrayExperience); let i = index"
+    ><app-experience [form]="ctrl"></app-experience>
+  </ng-container>
+  <h3 class="title-two">SKILLS</h3>
+  <ng-container
+    *ngFor="let ctrl of asArrayOfFormGroup(formArraySkills); let i = index"
+  >
+    <app-skills></app-skills>
+  </ng-container>
+</body>

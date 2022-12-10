@@ -1,0 +1,45 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Job</mat-label>
+    <input matInput type="text" formControlName="job" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Description</mat-label>
+    <input matInput type="text" formControlName="description" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Company</mat-label>
+    <input matInput type="text" formControlName="company" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Years Of Experience</mat-label>
+    <input matInput type="text" formControlName="years" />
+  </mat-form-field>
+  <div fxFlex="150px" fxLayout="row">
+    <button
+      mat-stroked-button
+      color="primary"
+      class="button-reference"
+      (click)="addReference()"
+    >
+      REFERENCE
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="deleteExpierence.emit(null)"
+      class="button-delete"
+    >
+      ELIMINAR
+    </button>
+  </div>
+
+  <ng-container
+    *ngFor="let rowCtrl of asArrayOfFormGroup(formArray); let j = index"
+  >
+    <app-reference-experience
+      [form]="rowCtrl"
+      (deleteReference)="deleteReference(j)"
+    ></app-reference-experience>
+  </ng-container>
+</div>

@@ -1,0 +1,15 @@
+<div [formGroup]="form" class="container-observation">
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Observation</mat-label>
+    <input matInput type="text" formControlName="observation" />
+  </mat-form-field>
+  <button
+    mat-mini-fab
+    color="warn"
+    (click)="deleteObservation.emit(null)"
+    class="button-delete"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+  {{ observacion }}
+</div>

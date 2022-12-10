@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="educacion">
+    <li>
+      <span class="year">{{ year }} </span>
+    </li>
+    <li>
+      <span class="titulo"> {{ titulo }}</span>
+    </li>
+    <li>
+      <span class="university"> {{ university }}</span>
+    </li>
+  </div>
+  <ng-container
+    *ngFor="let ctrl of asArrayOfFormGroup(formArray); let i = index"
+  >
+    <app-observacion-educacion></app-observacion-educacion
+  ></ng-container>
+</div>

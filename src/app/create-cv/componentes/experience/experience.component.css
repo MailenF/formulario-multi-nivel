@@ -1,0 +1,22 @@
+.container {
+  margin-top: 10px;
+}
+li {
+  list-style: none;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.box .year {
+  min-width: 150px;
+}
+
+.box .year .left {
+  text-transform: uppercase;
+}
+.position {
+  font-weight: 600;
+  text-transform: uppercase;
+}

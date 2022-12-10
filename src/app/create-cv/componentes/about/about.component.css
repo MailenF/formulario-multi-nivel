@@ -1,0 +1,13 @@
+.title {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.title-two {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}

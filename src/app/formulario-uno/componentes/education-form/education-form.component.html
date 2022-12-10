@@ -1,0 +1,36 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput type="text" formControlName="titulo" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>University</mat-label>
+    <input matInput type="text" formControlName="university" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Years</mat-label>
+    <input matInput type="text" formControlName="year" />
+  </mat-form-field>
+  <div fxFlex="150px" fxLayout="row">
+    <button mat-stroked-button color="primary" (click)="addObservation()">
+      OBSERVACIÓN
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="deleteEducation.emit(null)"
+      class="button-delete"
+    >
+      ELIMINAR
+    </button>
+  </div>
+
+  <ng-container
+    *ngFor="let rowCtrl of asArrayOfFormGroup(formArray); let j = index"
+  >
+    <app-observation-education
+      [form]="rowCtrl"
+      (deleteObservation)="deleteObservation(j)"
+    ></app-observation-education>
+  </ng-container>
+</div>

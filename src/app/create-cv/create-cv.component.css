@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  position: relative;
+  width: 100%;
+  margin: 50px;
+  max-width: 800px;
+  min-height: 900px;
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+.container .container-left {
+  position: relative;
+  background: pink;
+  padding: 20px;
+}
+.container .container-right {
+  position: relative;
+  background: rgba(184, 184, 184, 0.21);
+  padding: 40px;
+}
