@@ -19,7 +19,7 @@ export class FormularioUnoService {
 
   form(): FormGroup {
     return this.formBuilder.group({
-      name: new FormControl(''),
+      name: [''],
       lastName: new FormControl(''),
       profession: new FormControl(''),
       direction: new FormControl(''),

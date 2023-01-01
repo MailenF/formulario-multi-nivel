@@ -1,119 +1,128 @@
-<body>
-  <div class="container">
-    <div class="container-left">
-      <form [formGroup]="formulario" class="example-form" #f="ngForm">
-        <mat-form-field appearance="fill" class="container-name">
-          <mat-label>Name</mat-label>
-          <input matInput type="text" formControlName="name" />
-        </mat-form-field>
+<div class="container">
+  <div class="container-left">
+    <form [formGroup]="formulario" class="example-form">
+      <mat-form-field appearance="fill" class="container-name">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="container-lastName">
-          <mat-label>Last Name</mat-label>
-          <input matInput type="text" formControlName="lastName" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="container-lastName">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" formControlName="lastName" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Profession</mat-label>
-          <input matInput type="text" formControlName="profession" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Profession</mat-label>
+        <input matInput type="text" formControlName="profession" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Direction</mat-label>
-          <input matInput type="text" formControlName="direction" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Direction</mat-label>
+        <input matInput type="text" formControlName="direction" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Number</mat-label>
-          <input matInput type="text" formControlName="phoneNumber" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Number</mat-label>
+        <input matInput type="text" formControlName="phoneNumber" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Email</mat-label>
-          <input matInput type="text" formControlName="email" />
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email" />
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>About Me</mat-label>
-          <textarea
-            class="perfil"
-            matInput
-            type="text"
-            formControlName="perfil"
-          ></textarea>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>About Me</mat-label>
+        <textarea
+          class="perfil"
+          matInput
+          type="text"
+          formControlName="perfil"
+        ></textarea>
+      </mat-form-field>
 
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="clickEducationRow()"
-          class="button-education"
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="clickEducationRow()"
+        class="button-education"
+      >
+        EDUCACIÓN
+      </button>
+
+      <ng-container
+        *ngFor="
+          let ctrl of asArrayOfFormGroup(formArrayEducation);
+          let i = index
+        "
+      >
+        <app-education-form
+          [form]="ctrl"
+          [index]="i"
+          (deleteEducation)="deleteEducation(i)"
         >
-          EDUCACIÓN
-        </button>
+        </app-education-form>
+      </ng-container>
 
-        <ng-container
-          *ngFor="
-            let ctrl of asArrayOfFormGroup(formArrayEducation);
-            let i = index
-          "
-        >
-          <app-education-form
-            [form]="ctrl"
-            [index]="i"
-            (deleteEducation)="deleteEducation(i)"
-          >
-          </app-education-form>
-        </ng-container>
+      <button
+        mat-raised-button
+        color="primary"
+        class="button-work"
+        (click)="clickExperienceRow()"
+      >
+        EXPERIENCIA
+      </button>
 
-        <button
-          mat-raised-button
-          color="primary"
-          class="button-work"
-          (click)="clickExperienceRow()"
-        >
-          EXPERIENCIA
-        </button>
+      <ng-container
+        *ngFor="
+          let ctrl of asArrayOfFormGroup(formArrayExperience);
+          let i = index
+        "
+      >
+        <app-experience-form
+          [form]="ctrl"
+          [index]="i"
+          (deleteExpierence)="deleteExperience(i)"
+        ></app-experience-form>
+      </ng-container>
 
-        <ng-container
-          *ngFor="
-            let ctrl of asArrayOfFormGroup(formArrayExperience);
-            let i = index
-          "
-        >
-          <app-experience-form
-            [form]="ctrl"
-            [index]="i"
-            (deleteExpierence)="deleteExperience(i)"
-          ></app-experience-form>
-        </ng-container>
+      <button
+        mat-raised-button
+        color="primary"
+        class="button-skills"
+        (click)="clickSkillsRow()"
+      >
+        SKILLS
+      </button>
 
-        <button
-          mat-raised-button
-          color="primary"
-          class="button-skills"
-          (click)="clickSkillsRow()"
-        >
-          SKILLS
-        </button>
-
-        <ng-container
-          *ngFor="
-            let ctrl of asArrayOfFormGroup(formArraySkills);
-            let i = index
-          "
-        >
-          <app-skills-form
-            [form]="ctrl"
-            [index]="i"
-            (deleteSkill)="deleteSkill(i)"
-          ></app-skills-form>
-        </ng-container>
-      </form>
-    </div>
-    <div class="container-right">
-      <app-create-cv></app-create-cv>
-    </div>
+      <ng-container
+        *ngFor="let ctrl of asArrayOfFormGroup(formArraySkills); let i = index"
+      >
+        <app-skills-form
+          [form]="ctrl"
+          [index]="i"
+          (deleteSkill)="deleteSkill(i)"
+        ></app-skills-form>
+      </ng-container>
+    </form>
   </div>
 
-  <!--  <pre>{{ formulario.value | json }}</pre>-->
-</body>
+  <div class="container-right">
+    <app-create-cv></app-create-cv>
+  </div>
+  <div>
+    <div>
+      <button
+        mat-button
+        color="primary"
+        class="button-json"
+        (click)="clickJson()"
+      >
+        JSON
+      </button>
+    </div>
+    <div class="json-container" *ngIf="view">
+      <pre>{{ formulario.value | json }}</pre>
+    </div>
+  </div>
+</div>

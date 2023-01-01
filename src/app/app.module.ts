@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormularioUnoModule } from './formulario-uno/formulario-uno.module';
 import { CreateCvComponent } from './create-cv/create-cv.component';
 import { CreateCvModule } from './create-cv/create-cv.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CreateCvModule } from './create-cv/create-cv.module';
     SidenavComponent,
     FormularioUnoComponent,
     CreateCvComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

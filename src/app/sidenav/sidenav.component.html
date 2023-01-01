@@ -1,9 +1,11 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" class="drawer-container" opened>
     <mat-nav-list>
+      <a mat-list-item routerLink="">Home</a>
+      <mat-divider></mat-divider>
       <a mat-list-item routerLink="/formulario">Formulario</a>
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content> <router-outlet></router-outlet></mat-drawer-content>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
 </mat-drawer-container>

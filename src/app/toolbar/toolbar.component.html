@@ -1,3 +1,27 @@
-<mat-toolbar color="primary">
-  <span>FORMULARIO MULTI-NIVEL</span>
+<mat-toolbar class="toolbar" color="primary">
+  <div class="container">
+    <span>FORMULARIO MULTI-NIVEL</span>
+  </div>
 </mat-toolbar>
+
+<header class="header">
+  <h1 class="header__h1">FORMULARIO MULTI-NIVEL</h1>
+
+  <button
+    (click)="setActive()"
+    class="header__button"
+    mat-icon-button
+    aria-label="Example icon button with a menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <nav class="header__nav" [ngClass]="{ 'header__nav--activo': active }">
+    <mat-nav-list class="mat-nav-list" (click)="setView()"
+      ><a class="list" routerLink=""> Home </a>
+      <mat-divider></mat-divider>
+      <a class="list" routerLink="/formulario">Formulario</a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </nav>
+</header>

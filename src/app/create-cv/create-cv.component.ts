@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormularioUnoService } from '../formulario-uno/formulario-uno.service';
 
 @Component({
   selector: 'app-create-cv',

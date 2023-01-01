@@ -19,6 +19,7 @@ export class FormularioUnoComponent implements OnInit {
   formArrayEducation: FormArray;
   formArrayExperience: FormArray;
   formArraySkills: FormArray;
+  view = false;
 
   constructor(private formService: FormularioUnoService) {
     this.formulario = formService.formulario;
@@ -60,5 +61,9 @@ export class FormularioUnoComponent implements OnInit {
 
   asArrayOfFormGroup(form: FormArray): FormGroup[] {
     return form.controls as FormGroup[];
+  }
+
+  clickJson(): void {
+    this.view = !this.view;
   }
 }

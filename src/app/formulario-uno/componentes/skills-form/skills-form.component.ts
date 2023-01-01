@@ -53,6 +53,6 @@ export class SkillsFormComponent implements OnInit {
   }
 
   getValueSkillTwo(): void {
-    this.formService.valueFormObservation(this.form);
+    this.formService.valueFormSkills(this.form);
   }
 }
